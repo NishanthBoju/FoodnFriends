@@ -1,4 +1,4 @@
-package com.example.foodnfriends;
+package com.example.retrofitjsonimage;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     if (s1.equals(user1.get(i)) && s2.equals(pass1.get(i))) {
                         //openactivity3();
                         count++;
-                        Intent intent3 = new Intent(MainActivity.this, Main3Activity.class);
+                        Intent intent3 = new Intent(MainActivity.this, Main2Activity.class);
                         startActivity(intent3);
                     }
                 }

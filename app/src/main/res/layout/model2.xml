@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_margin="5dp"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="5dp"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/spacecraftImageView"
+            android:padding="5dp"
+            android:src="@drawable/placeholder" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Spacecraft Name"
+            android:id="@+id/nameTextView"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/spacecraftImageView" />
+
+        <TextView
+
+            android:id="@+id/propellantTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/spacecraftImageView"
+            android:padding="5dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Age"
+            android:layout_marginTop="40dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="italic" />
+
+        <TextView
+
+            android:id="@+id/Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/spacecraftImageView"
+            android:padding="5dp"
+            android:textColor="@color/colorAccent"
+            android:text="Location"
+            android:layout_marginTop="60dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="italic" />
+
+        <TextView
+
+            android:id="@+id/movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/spacecraftImageView"
+            android:padding="5dp"
+            android:textColor="#3338FF"
+            android:text="Upcoming Movie"
+            android:layout_marginTop="80dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button21"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/spacecraftImageView"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:textColor="@android:color/white"
+            android:background="#FC0A03"
+
+            android:layout_height="28dp"
+            android:text="Pick this Restaurant "
+            android:layout_marginTop="110dp"
+            />
+    </RelativeLayout>
+</LinearLayout>

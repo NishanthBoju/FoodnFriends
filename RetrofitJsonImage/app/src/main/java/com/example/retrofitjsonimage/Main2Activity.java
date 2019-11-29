@@ -1,14 +1,11 @@
-package com.example.foodnfriends;
-
+package com.example.retrofitjsonimage;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -29,9 +26,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 
-//import android.support.v7.app.AppCompatActivity;
-
-public class Main4Activity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity {
 
 
     class Spacecraft {
@@ -103,7 +98,7 @@ public class Main4Activity extends AppCompatActivity {
     ////////////////////////////////INTERFACE/////////////////
     interface MyAPIService {
 
-        @GET("https://api.myjson.com/bins/x60fu")
+        @GET("https://api.myjson.com/bins/19wtvm")
         Call<List<Spacecraft>> getSpacecrafts();
     }
 
@@ -123,7 +118,7 @@ public class Main4Activity extends AppCompatActivity {
         }
     }
 
-    class ListViewAdapter extends BaseAdapter {
+    class ListViewAdapter extends BaseAdapter{
 
         private List<Spacecraft> spacecrafts;
         private Context context;
@@ -152,14 +147,13 @@ public class Main4Activity extends AppCompatActivity {
         public View getView(int position, View view, ViewGroup viewGroup) {
             if(view==null)
             {
-                view= LayoutInflater.from(context).inflate(R.layout.model,viewGroup,false);
+                view=LayoutInflater.from(context).inflate(R.layout.model,viewGroup,false);
             }
 
             TextView nameTxt = view.findViewById(R.id.nameTextView);
             TextView txtPropellant = view.findViewById(R.id.propellantTextView);
             TextView txtLocation = view.findViewById(R.id.Location);
             TextView txtMovie = view.findViewById(R.id.movie);
-            Button btnm1=view.findViewById(R.id.button12);
 
             //  CheckBox chkTechExists = view.findViewById(R.id.myCheckBox);
             ImageView spacecraftImageView = view.findViewById(R.id.spacecraftImageView);
@@ -188,14 +182,7 @@ public class Main4Activity extends AppCompatActivity {
                     Toast.makeText(context, thisSpacecraft.getName(), Toast.LENGTH_SHORT).show();
                 }
             });
-            btnm1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent2=new Intent(Main4Activity.this,Main5Activity.class);
-                    Toast.makeText(Main4Activity.this,"Invitation Accepted",Toast.LENGTH_LONG).show();
-                    startActivity(intent2);
-                }
-            });
+
             return view;
         }
     }
@@ -206,33 +193,14 @@ public class Main4Activity extends AppCompatActivity {
 
     private void populateListView(List<Spacecraft> spacecraftList) {
         mListView = findViewById(R.id.mListView);
-        adapter = new ListViewAdapter(Main4Activity.this,spacecraftList);
+        adapter = new ListViewAdapter(this,spacecraftList);
         mListView.setAdapter(adapter);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main4);
-        Button btn=findViewById(R.id.button6);
-     //   Button btn2=findViewById(R.id.button10);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(Main4Activity.this,MainActivity.class);
-                Toast.makeText(Main4Activity.this,"Successfully Logged Out",Toast.LENGTH_LONG).show();
-                startActivity(intent);
-            }
-        });
-//        btn2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent2=new Intent(Main4Activity.this,Main5Activity.class);
-//                Toast.makeText(Main4Activity.this,"Invitation Accepted",Toast.LENGTH_LONG).show();
-//                startActivity(intent2);
-//            }
-//        });
+        setContentView(R.layout.activity_main2);
 
         final ProgressBar myProgressBar= findViewById(R.id.myProgressBar);
         myProgressBar.setIndeterminate(true);
@@ -252,9 +220,19 @@ public class Main4Activity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Spacecraft>> call, Throwable throwable) {
                 myProgressBar.setVisibility(View.GONE);
-                Toast.makeText(Main4Activity.this, throwable.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(Main2Activity.this, throwable.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
 }
 
+
+/*
+   <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/myCheckBox"
+            android:text="Tech Exists?"
+            android:layout_alignParentRight="true" />
+
+*/

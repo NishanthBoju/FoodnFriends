@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Main4Activity">
+    tools:context=".Main6Activity">
 
     <TextView
         android:id="@+id/headerTxt"
@@ -37,7 +37,7 @@
     </ListView>
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/button9"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="20dp"
         android:background="#FC0A03"
